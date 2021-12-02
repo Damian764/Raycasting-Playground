@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raycasting Playground Controls</title>
+</head>
+<style>
+    body {
+        background-color: #d0fffd;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: 'Open Sans', serif;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    table {
+        font-size: 1.2em;
+        border-collapse: collapse;
+    }
+
+    th {
+        font-size: 1.3em;
+    }
+
+    tr {
+        background-color: #d0fffd;
+    }
+
+    tr:nth-child(even) {
+        filter: brightness(.95);
+    }
+
+    td {
+        padding: 5px 15px;
+        border: none;
+        font-weight: 200;
+        text-align: left;
+    }
+
+    td:first-child {
+        font-weight: 400;
+    }
+
+    .btn {
+        margin: 15px auto;
+        padding: 10px 0px;
+        display: block;
+        background-color: #c42ea6;
+        border-radius: 20px;
+        box-shadow:
+            inset 0 2px 4px rgba(255, 255, 255, 0.7),
+            inset -2px -2px 4px rgba(0, 0, 0, .2),
+            2px 2px 4px rgba(0, 0, 0, .2);
+        transition: 0.3s;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    .btn:hover:not(:active) {
+        transform: scale(1.1);
+        box-shadow:
+            inset 0 2px 4px rgba(255, 255, 255, 0.7),
+            inset -2px -2px 8px rgba(0, 0, 0, .2),
+            2px 5px 10px rgba(0, 0, 0, .6);
+    }
+    .btn:active {
+        transition: 0.2s cubic-bezier(0.5, -2, 0.22, 1.97);
+        box-shadow:
+        inset 0 0 8px rgba(0, 0, 0, 0.7),
+        2px 5px 10px rgba(0, 0, 0, 0);;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <table>
+            <tbody>
+                <tr>
+                    <th>Key</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Left arrow</td>
+                    <td>Look left</td>
+                </tr>
+                <tr>
+                    <td>Right arrow</td>
+                    <td>Look right</td>
+                </tr>
+                <tr>
+                    <td>Plus key</td>
+                    <td>Increase FOV</td>
+                </tr>
+                <tr>
+                    <td>Minus key</td>
+                    <td>Decrease FOV</td>
+                </tr>
+                <tr>
+                    <td>Mouse</td>
+                    <td>"Move" around</td>
+                </tr>
+            </tbody>
+        </table>
+        <a class="btn" href="/raycasting-playground/index.html">Let me play already!</a>
+    </div>
+</body>
+
+</html>
