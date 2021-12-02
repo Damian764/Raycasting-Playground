@@ -17,8 +17,8 @@ function setup() {
   createBox(150, 0, 30, 235);
   createBox((width / 2) - 40, (height / 2) - 40, 80, 80);
   createBox((width / 2) + 20, (height / 2) + 50, 20, 80);
-  for(let i = 0; i < 30; i++) {
-    createBox(random(width), random(height), random(width)/10,random(height)/10);
+  for (let i = 0; i < 30; i++) {
+    createBox(random(width), random(height), random(width) / 10, random(height) / 10);
   }
   // createRandomBoundries();
 }
@@ -28,10 +28,27 @@ function draw() {
   // put drawing code here
   noStroke();
   particle.updatePosition(mouseX, mouseY);
+  if (keyIsDown(LEFT_ARROW)) {
+    particle.startPos ++;
+    particle.lookAround();
+  }
+  if (keyIsDown(RIGHT_ARROW)) {
+    particle.startPos --;
+    particle.lookAround();
+  }
+  if (keyIsDown(107)) {
+    particle.fov < 360 ? particle.fov++ : particle.fov = 360;
+    particle.changeFOV()
+  }
+  if (keyIsDown(109)) {
+    particle.fov > 0 ? particle.fov-- : particle.fov = 0;
+    particle.fov--;
+    particle.changeFOV()
+  }
   for (let wall of walls) {
     wall.show();
   }
-  particle.look(walls, 'rgba(166,156,30,0.05)');
+  particle.look(walls, 'rgba(255,53,184, 0.05)');
   if (isFpsShow) {
     showFPS();
   }
