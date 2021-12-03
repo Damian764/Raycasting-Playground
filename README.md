@@ -6,8 +6,8 @@ Just open rayasting-playground/index.html on your local live server
 
 |    Key    |  Action   |
 |-----------|-----------|
-|Left arrow |Look left  |
-|Right arrow|Look right	|
+|Left or A  |Look left  |
+|Right or D |Look right	|
 |Plus key	|Incr. FOV  |
 |Minus key 	|Decr. FOV  |
-|Mouse   	|Move around|
+|Mouse      |Move around|

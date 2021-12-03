@@ -6,7 +6,7 @@ let particle;
 let isFpsShow = false;
 function setup() {
   // put setup code here
-  createCanvas(1900, 900);
+  createCanvas(window.innerWidth - 20, window.innerHeight - 40);
   noCursor();
   particle = new Particle();
   checkbox = createCheckbox('Show FPS', false);
@@ -28,20 +28,20 @@ function draw() {
   // put drawing code here
   noStroke();
   particle.updatePosition(mouseX, mouseY);
-  if (keyIsDown(LEFT_ARROW)) {
-    particle.startPos ++;
+  if (keyIsDown(LEFT_ARROW) || keyIsDown(65)) {
+    particle.startPos += 2;
     particle.lookAround();
   }
-  if (keyIsDown(RIGHT_ARROW)) {
-    particle.startPos --;
+  if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
+    particle.startPos -= 2;
     particle.lookAround();
   }
-  if (keyIsDown(107)) {
-    particle.fov < 360 ? particle.fov++ : particle.fov = 360;
+  if (keyIsDown(107) || keyIsDown(187)) {
+    particle.fov < 359.9 ? particle.fov += 2 : particle.fov = 360;
     particle.changeFOV()
   }
-  if (keyIsDown(109)) {
-    particle.fov > 0 ? particle.fov-- : particle.fov = 0;
+  if (keyIsDown(109) || keyIsDown(189)) {
+    particle.fov > 0.1 ? particle.fov -= 2 : particle.fov = 0;
     particle.fov--;
     particle.changeFOV()
   }
